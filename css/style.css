@@ -1,0 +1,94 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+
+
+
+body	{
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #7b233a;
+  font-size: large;
+}
+
+/*　ナビゲーションバー　navbar-static */
+.menu{
+    margin: 0;
+}
+.message {
+  padding: 50px 0 50px 0;
+  text-align: center;
+}
+.message div#list {
+  background-color: rgba(249, 230, 205);
+  margin: 50px 0 25px 0;
+  padding: 50px 0 25px 0;
+}
+.message div#text1 {
+  margin: 15px 15px 25px 0;
+  padding: 50px 0 25px 0;
+  text-align: left;
+}
+/* footer */
+.footer {
+  padding: 15px 0 25px 0;
+  background-color: rgb(27, 27, 26);
+  color: #fff;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* essential */
+.essential {
+  color: rgb(255, 0, 0);
+  font-weight: normal;
+  font-size: 120%;
+}
+
+/* form */
+.form-control {
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .formarea {
+    padding: 15px 0 0 0;
+    text-align: center;
+  }
+  .regist_button {
+    margin-left: 125px;
+  }
+}
+
+.copyarea {
+  padding: 30px 0 0 0;
+  background-color: rgb(27, 27, 26);
+  color: #fff;
+}
+
+/* PAGE TOP */
+#page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 80%;
+}
+
+#page-top a {
+  background: #666;
+  text-decoration: none;
+  color: #fff;
+  width: 100px;
+  padding: 25px 0;
+  text-align: center;
+  display: block;
+  border-radius: 10px;
+}
+
+#page-top a:hover {
+  text-decoration: none;
+  background: #999;
+}
