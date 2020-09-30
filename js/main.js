@@ -91,7 +91,43 @@ $(function() {
 });
 
 $(document).ready( function(){
+  const div = document.querySelector('#TopMessage');
+  div.style.opacity = 0
   $.get(csvfile, readCsv, 'text');
-  const div = document.querySelector('#TopImage');
-  div.animate([{opacity: '0'}, {opacity: '1'}], 3000);
+  // bodyにdivを追加
+  $('body').append('<div id="curtain">');
+
+  // 追加したdivを塗りつぶしてから透明化アニメーション
+  $('#curtain').css({
+      position: 'absolute',
+      left: 0, top: 0,
+      width: '100%', height: '100%',
+      backgroundColor: '#fff',
+      opacity: 100
+  }).animate({
+      opacity: 0
+  }, 1500, function () {
+      // アニメーション終了後に自身を消す
+      $(this).remove();
+      //const div = document.querySelector('#TopMessage');
+      div.animate([{opacity: '0'}, {opacity: '1'}], 1500);
+      div.style.opacity = 1
+  });
+});
+$(function(){
+	$(window).on('load scroll',function (){
+		$('.animation').each(function(){
+			//ターゲットの位置を取得
+			var target = $(this).offset().top;
+			//スクロール量を取得
+			var scroll = $(window).scrollTop();
+			//ウィンドウの高さを取得
+			var height = $(window).height();
+			//ターゲットまでスクロールするとフェードインする
+			if (scroll > target - height){
+				//クラスを付与
+				$(this).addClass('active');
+			}
+		});
+	});
 });
