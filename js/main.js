@@ -36,35 +36,12 @@ function readCsv(data) {
         insert += '</div>';
         insert += '</div>';
         insert += '</div>';
-          /*
-          $(this).each(function() {
-              if (i == 0 || i == 1) {
-                insert += '<div class="col-sm-1">';
-              }else{
-                insert += '<div class="col-sm-5">';
-              }         
-              insert += '<div id="text1">';
-              insert += '<i>' + this + '</i>';
-              insert += '</div>';
-              insert += '</div>';
-              i += 1
-          });
-          if (i == 3) {
-            insert += '<div class="col-sm-5">';
-              insert += '<div id="text1">';
-              insert += '<i></i>';
-              insert += '</div>';
-              insert += '</div>';
-          }
-          insert += '</div>';
-          insert += '</div>';
-          */
       }
   });
   $(target).append(insert);
 }
 var csvfile = 'img/data.csv';
-
+/*
 $(function() {
     var topBtn = $('#page-top');
     topBtn.hide();
@@ -84,18 +61,7 @@ $(function() {
         return false;
     });
 });
-
-$(function() {
-  $('a[href^="#"]').click(function() {
-    var speed = 500;
-    var href = $(this).attr("href");
-    var target = $(href == "#" || href == "" ? 'html' : href);
-    var position = target.offset().top;
-    $('html, body').animate({scrollTop:position}, speed, 'swing');
-    return false;
-  });
-});
-
+*/
 $(document).ready( function(){
   var language;  
   
