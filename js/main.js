@@ -15,11 +15,11 @@ function readCsv(data) {
             }else if (i == 1){
               insert += '<div class="col-sm-2">';
               insert += '<div id="text1">';
-              insert += '<span>';
+              insert += '<div nameblock>';
               insert += '<img class="umbrella-img" src="img/umbrella.png" alt=""></img>';
-              insert += '<p>' + text + '</p>';
+              insert += '<span>' + text + '</span>';
               insert += '<img class="umbrella-img" src="img/umbrella.png" alt=""></img>';
-              insert += '</span>';
+              insert += '</div>';
               insert += '<p>' + 'HomeTown:' + this + '</p>';
               insert += '</div>';
               insert += '</div>';
