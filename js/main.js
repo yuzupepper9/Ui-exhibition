@@ -136,9 +136,9 @@ $(document).ready( function(){
       div.style.opacity = 1
   });
   let scroll_hint = document.querySelector('#scroll-arrow-hint');
-    let scroll_hint_show_time = svg_fully_drawn_time + 1;
-    scroll_hint.style.transition = scroll_hint.style.WebkitTransition = 'opacity 1s linear ' + scroll_hint_show_time + 's';
-    scroll_hint.style.opacity = 1;
+  let scroll_hint_show_time = 1;
+  scroll_hint.style.transition = scroll_hint.style.WebkitTransition = 'opacity 1s linear ' + scroll_hint_show_time + 's';
+  scroll_hint.style.opacity = 1;
 });
 function setLanguage(language){  
   var element = document.getElementsByClassName("languageClass");  
