@@ -20,7 +20,7 @@ function readCsv(data) {
               insert += '<span>' + text + '</span>';
               insert += '<img class="umbrella-img" src="img/umbrella.png" alt=""></img>';
               insert += '</div>';
-              insert += '<p>' + 'HomeTown:' + this + '</p>';
+              insert += '<p>' + this + '</p>';
               insert += '</div>';
               insert += '</div>';
             }else{
