@@ -104,14 +104,23 @@ img.umbrella-img {
 .fadein {
   opacity: 0;
   transform : translate(0, 50px);
-  transition : all 1500ms;
+  transition : all 2000ms;
 }
 
 .fadein.scrollin{
   opacity: 1;
   transform: translate(0, 0);
 }
+.fadeinmessage {
+  opacity: 0;
+  transform : translate(0, 50px);
+  transition : all 500ms;
+}
 
+.fadeinmessage.scrollin{
+  opacity: 1;
+  transform: translate(0, 0);
+}
 #scroll-arrow-hint {
   position: absolute;
   bottom: 25vh;

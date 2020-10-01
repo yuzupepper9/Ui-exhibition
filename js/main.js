@@ -6,7 +6,7 @@ function readCsv(data) {
       if (this.length > 0) {
           var i = 0;
           var text = ''
-          insert += '<div class="fadein">';
+          insert += '<div class="fadeinmessage">';
           insert += '<div id="list">'
           insert += '<div class="container">';
           $(this).each(function() {
@@ -163,7 +163,7 @@ $(window).scroll(function (){
             $(this).addClass('scrollin');
           }
       });
-      $('.list').each(function(){
+      $('.fadeinmessage').each(function(){
         var elemPos = $(this).offset().top,
             scroll = $(window).scrollTop(),
             windowHeight = $(window).height();
