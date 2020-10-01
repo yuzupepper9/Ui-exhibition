@@ -84,6 +84,21 @@ $(document).ready( function(){
   setLanguage(language);
   const div = document.querySelector('#TopMessage');
 
+  
+});
+function setLanguage(language){  
+  var element = document.getElementsByClassName("languageClass");  
+  for (var i = 0; i < element.length; i++) {  
+    if(element[i].getAttribute("lang") == language){  
+      element[i].style.display = "";  
+    }  
+    else{  
+      element[i].style.display = "none";  
+    }  
+  }  
+}  
+window.onload = function() {
+  const div = document.querySelector('#TopMessage');
   div.style.opacity = 0
   $.get(csvfile, readCsv, 'text');
   // bodyにdivを追加
@@ -109,19 +124,7 @@ $(document).ready( function(){
   let scroll_hint_show_time = 1;
   scroll_hint.style.transition = scroll_hint.style.WebkitTransition = 'opacity 1s linear ' + scroll_hint_show_time + 's';
   scroll_hint.style.opacity = 1;
-});
-function setLanguage(language){  
-  var element = document.getElementsByClassName("languageClass");  
-  for (var i = 0; i < element.length; i++) {  
-    if(element[i].getAttribute("lang") == language){  
-      element[i].style.display = "";  
-    }  
-    else{  
-      element[i].style.display = "none";  
-    }  
-  }  
-}  
-
+}
 $(window).scroll(function (){
   $('.fadein').each(function(){
       var elemPos = $(this).offset().top,
