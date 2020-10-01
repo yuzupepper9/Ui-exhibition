@@ -6,8 +6,8 @@ function readCsv(data) {
       if (this.length > 0) {
           var i = 0;
           var text = ''
-          insert += '<div id="list">';
           insert += '<div class="fadein">';
+          insert += '<div id="list">'
           insert += '<div class="container">';
           $(this).each(function() {
             if (i == 0 || i == 2) {
