@@ -7,6 +7,7 @@ function readCsv(data) {
           var i = 0;
           var text = ''
           insert += '<div id="list">';
+          insert += '<div class="fadein">';
           insert += '<div class="container">';
           $(this).each(function() {
             if (i == 0 || i == 2) {
@@ -30,6 +31,7 @@ function readCsv(data) {
             }         
             i += 1
         });
+        insert += '</div>';
         insert += '</div>';
         insert += '</div>';
           /*
