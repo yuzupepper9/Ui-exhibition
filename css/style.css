@@ -144,7 +144,7 @@ img.umbrella-img {
 #scroll-arrow-hint span:nth-child(3) {
   animation-delay: -0.4s;
 }
-#nameblock {
+.message div#nameblock {
   display: inline-block;
   text-align: center;
 }
