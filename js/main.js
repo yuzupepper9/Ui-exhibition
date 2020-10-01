@@ -25,7 +25,7 @@ function readCsv(data) {
               insert += '</div>';
             }else{
               insert += '<div class="col-sm-9">';
-              insert += '<div id="text1">';             
+              insert += '<div id="text2">';             
               insert += '<p>' + text + '</p>';
               insert += '<p>' + this + '</p>';
               insert += '</div>';

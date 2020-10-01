@@ -17,9 +17,6 @@ body	{
 .menu{
     margin: 0;
 }
-.message {
-  text-align: left;
-}
 .message div#list {
   background-color: rgba(249, 230, 205);
   box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
@@ -29,6 +26,12 @@ body	{
 }
 .message div#text1 {
   margin: 15px 15px 15px 0;
+  text-align: center;
+  /*padding: 15px 0 15px 0;*/
+}
+.message div#text2 {
+  margin: 15px 15px 15px 0;
+  text-align: left;
   /*padding: 15px 0 15px 0;*/
 }
 img.umbrella-img {
@@ -146,5 +149,4 @@ img.umbrella-img {
 }
 .message div#nameblock {
   display: inline-block;
-  text-align: center;
 }
