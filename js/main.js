@@ -14,8 +14,10 @@ function readCsv(data) {
             }else if (i == 1){
               insert += '<div class="col-sm-2">';
               insert += '<div id="text1">';
+              insert += '<img class="umbrella-img" src="img/umbrella.png" alt=""></img>';
               insert += '<p>' + text + '</p>';
-              insert += '<p>' + '(' + this + ')' + '</p>';
+              insert += '<img class="umbrella-img" src="img/umbrella.png" alt=""></img>';
+              insert += '<p>' + 'HomeTown:' + this + '</p>';
               insert += '</div>';
               insert += '</div>';
             }else{
@@ -111,6 +113,7 @@ $(document).ready( function(){
   }
   setLanguage(language);
   const div = document.querySelector('#TopMessage');
+
   div.style.opacity = 0
   $.get(csvfile, readCsv, 'text');
   // bodyにdivを追加
@@ -132,23 +135,10 @@ $(document).ready( function(){
       div.animate([{opacity: '0'}, {opacity: '1'}], 1500);
       div.style.opacity = 1
   });
-});
-$(function(){
-	$(window).on('load scroll',function (){
-		$('#under_message').each(function(){
-			//ターゲットの位置を取得
-			var target = $(this).offset().top;
-			//スクロール量を取得
-			var scroll = $(window).scrollTop();
-			//ウィンドウの高さを取得
-			var height = $(window).height();
-			//ターゲットまでスクロールするとフェードインする
-			if (scroll > target - height){
-				//クラスを付与
-				$(this).addClass('active');
-			}
-		});
-	});
+  let scroll_hint = document.querySelector('#scroll-arrow-hint');
+    let scroll_hint_show_time = svg_fully_drawn_time + 1;
+    scroll_hint.style.transition = scroll_hint.style.WebkitTransition = 'opacity 1s linear ' + scroll_hint_show_time + 's';
+    scroll_hint.style.opacity = 1;
 });
 function setLanguage(language){  
   var element = document.getElementsByClassName("languageClass");  
@@ -161,3 +151,22 @@ function setLanguage(language){
     }  
   }  
 }  
+
+$(window).scroll(function (){
+  $('.fadein').each(function(){
+      var elemPos = $(this).offset().top,
+          scroll = $(window).scrollTop(),
+          windowHeight = $(window).height();
+        if (scroll > elemPos - windowHeight + 100){
+            $(this).addClass('scrollin');
+          }
+      });
+      $('.list').each(function(){
+        var elemPos = $(this).offset().top,
+            scroll = $(window).scrollTop(),
+            windowHeight = $(window).height();
+          if (scroll > elemPos - windowHeight + 100){
+              $(this).addClass('scrollin');
+            }
+        });
+  });
