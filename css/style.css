@@ -30,7 +30,7 @@ body	{
 .message div#text1 {
   margin: 15px 15px 15px 0;
   /*padding: 15px 0 15px 0;*/
-  text-align: left;
+  text-align: center;
 }
 img.umbrella-img {
   width: 30px;
