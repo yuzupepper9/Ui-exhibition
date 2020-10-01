@@ -91,6 +91,25 @@ $(function() {
 });
 
 $(document).ready( function(){
+  var language;  
+  
+  if (navigator.browserLanguage != null) {  
+    // Internet Explorer, Opera, 他  
+    language = navigator.browserLanguage.substr(0, 2);  
+  } else if(navigator.userLanguage != null) {  
+    // Internet Explorerの場合  
+    language = navigator.userLanguage.substr(0, 2);  
+  } else if(navigator.language != null) {  
+    // Chrome, Firefox, Opera, 他  
+    language = navigator.language.substr(0, 2);  
+  } else {  
+    // その他  
+    language = "en";  
+  }   
+  if (language != "ja"){
+    language = "en";  
+  }
+  setLanguage(language);
   const div = document.querySelector('#TopMessage');
   div.style.opacity = 0
   $.get(csvfile, readCsv, 'text');
@@ -116,7 +135,7 @@ $(document).ready( function(){
 });
 $(function(){
 	$(window).on('load scroll',function (){
-		$('.animation').each(function(){
+		$('#under_message').each(function(){
 			//ターゲットの位置を取得
 			var target = $(this).offset().top;
 			//スクロール量を取得
@@ -131,3 +150,14 @@ $(function(){
 		});
 	});
 });
+function setLanguage(language){  
+  var element = document.getElementsByClassName("languageClass");  
+  for (var i = 0; i < element.length; i++) {  
+    if(element[i].getAttribute("lang") == language){  
+      element[i].style.display = "";  
+    }  
+    else{  
+      element[i].style.display = "none";  
+    }  
+  }  
+}  
