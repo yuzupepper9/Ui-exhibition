@@ -15,7 +15,7 @@ function readCsv(data) {
             }else if (i == 1){
               insert += '<div class="col-sm-3">';
               insert += '<div id="text1">';
-              insert += '<div nameblock>';
+              insert += '<div class="nameblock">';
               insert += '<img class="umbrella-img" src="img/umbrella.png" alt=""></img>';
               insert += '<span>' + text + '</span>';
               insert += '<img class="umbrella-img" src="img/umbrella.png" alt=""></img>';

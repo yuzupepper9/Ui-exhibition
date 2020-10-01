@@ -145,6 +145,6 @@ img.umbrella-img {
   animation-delay: -0.4s;
 }
 .message div#nameblock {
-  display: inline;
+  display: inline-block;
   text-align: center;
 }
