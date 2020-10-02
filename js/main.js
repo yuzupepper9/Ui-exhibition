@@ -41,40 +41,40 @@ function readCsv(data) {
   $(target).append(insert);
 }
 var csvfile = 'img/data.csv';
-$(document).ready( function(){
-  var language;  
-  $('.cp_arrows').css('visibility','hidden');
-  if (navigator.browserLanguage != null) {  
-    // Internet Explorer, Opera, 他  
-    language = navigator.browserLanguage.substr(0, 2);  
-  } else if(navigator.userLanguage != null) {  
-    // Internet Explorerの場合  
-    language = navigator.userLanguage.substr(0, 2);  
-  } else if(navigator.language != null) {  
-    // Chrome, Firefox, Opera, 他  
-    language = navigator.language.substr(0, 2);  
-  } else {  
-    // その他  
-    language = "en";  
-  }   
-  if (language != "ja"){
-    language = "en";  
-  }
-  setLanguage(language);
-  const div = document.querySelector('#TopMessage');
+// $(document).ready( function(){
+//   var language;  
+//   $('.cp_arrows').css('visibility','hidden');
+//   if (navigator.browserLanguage != null) {  
+//     // Internet Explorer, Opera, 他  
+//     language = navigator.browserLanguage.substr(0, 2);  
+//   } else if(navigator.userLanguage != null) {  
+//     // Internet Explorerの場合  
+//     language = navigator.userLanguage.substr(0, 2);  
+//   } else if(navigator.language != null) {  
+//     // Chrome, Firefox, Opera, 他  
+//     language = navigator.language.substr(0, 2);  
+//   } else {  
+//     // その他  
+//     language = "en";  
+//   }   
+//   if (language != "ja"){
+//     language = "en";  
+//   }
+//   setLanguage(language);
+//   const div = document.querySelector('#TopMessage');
   
-});
-function setLanguage(language){  
-  var element = document.getElementsByClassName("languageClass");  
-  for (var i = 0; i < element.length; i++) {  
-    if(element[i].getAttribute("lang") == language){  
-      element[i].style.display = "";  
-    }  
-    else{  
-      element[i].style.display = "none";  
-    }  
-  }  
-}  
+// });
+// function setLanguage(language){  
+//   var element = document.getElementsByClassName("languageClass");  
+//   for (var i = 0; i < element.length; i++) {  
+//     if(element[i].getAttribute("lang") == language){  
+//       element[i].style.display = "";  
+//     }  
+//     else{  
+//       element[i].style.display = "none";  
+//     }  
+//   }  
+// }  
 $(window).scroll(function (){
   $('.fadein').each(function(){
       var elemPos = $(this).offset().top,
