@@ -41,30 +41,9 @@ function readCsv(data) {
   $(target).append(insert);
 }
 var csvfile = 'img/data.csv';
-/*
-$(function() {
-    var topBtn = $('#page-top');
-    topBtn.hide();
-    //スクロールが500に達したらボタン表示
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 500) {
-            topBtn.fadeIn();
-        } else {
-            topBtn.fadeOut();
-        }
-    });
-    //スクロールしてトップ
-    topBtn.click(function () {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 500);
-        return false;
-    });
-});
-*/
 $(document).ready( function(){
   var language;  
-  
+  $('.cp_arrows').css('visibility','hidden');
   if (navigator.browserLanguage != null) {  
     // Internet Explorer, Opera, 他  
     language = navigator.browserLanguage.substr(0, 2);  
@@ -83,7 +62,6 @@ $(document).ready( function(){
   }
   setLanguage(language);
   const div = document.querySelector('#TopMessage');
-
   
 });
 function setLanguage(language){  
@@ -97,34 +75,6 @@ function setLanguage(language){
     }  
   }  
 }  
-window.onload = function() {
-  const div = document.querySelector('#TopMessage');
-  div.style.opacity = 0
-  $.get(csvfile, readCsv, 'text');
-  // bodyにdivを追加
-  $('body').append('<div id="curtain">');
-
-  // 追加したdivを塗りつぶしてから透明化アニメーション
-  $('#curtain').css({
-      position: 'absolute',
-      left: 0, top: 0,
-      width: '100%', height: '100%',
-      backgroundColor: '#fff',
-      opacity: 100
-  }).animate({
-      opacity: 0
-  }, 1500, function () {
-      // アニメーション終了後に自身を消す
-      $(this).remove();
-      //const div = document.querySelector('#TopMessage');
-      div.animate([{opacity: '0'}, {opacity: '1'}], 1500);
-      div.style.opacity = 1
-  });
-  let scroll_hint = document.querySelector('#scroll-arrow-hint');
-  let scroll_hint_show_time = 1;
-  scroll_hint.style.transition = scroll_hint.style.WebkitTransition = 'opacity 1s linear ' + scroll_hint_show_time + 's';
-  scroll_hint.style.opacity = 1;
-}
 $(window).scroll(function (){
   $('.fadein').each(function(){
       var elemPos = $(this).offset().top,
@@ -151,4 +101,51 @@ jQuery.event.add(window,"load",function() { // 全ての読み込み完了後に
     $("#fade").css("height", pageH).delay(900).fadeOut(800);
     $("#loader").delay(600).fadeOut(300);
     $("#container").css("display", "block");
+    const div = document.querySelector('#TopMessage');
+  div.style.opacity = 0
+  $.get(csvfile, readCsv, 'text');
+  // bodyにdivを追加
+  $('body').append('<div id="curtain">');
+
+  // 追加したdivを塗りつぶしてから透明化アニメーション
+  $('#curtain').css({
+      position: 'absolute',
+      left: 0, top: 0,
+      width: '100%', height: '100%',
+      backgroundColor: '#fff',
+      opacity: 100
+  }).animate({
+      opacity: 0
+  }, 1500, function () {
+      // アニメーション終了後に自身を消す
+      $(this).remove();
+      //const div = document.querySelector('#TopMessage');
+      div.animate([{opacity: '0'}, {opacity: '1'}], 1500);
+      div.style.opacity = 1
+      sleep(1.2, function () { 
+        $('.cp_arrows').css('visibility','visible');     
+    });
+  });
 });
+function sleep(waitSec, callbackFunc) {
+ 
+    // 経過時間（秒）
+    var spanedSec = 0;
+ 
+    // 1秒間隔で無名関数を実行
+    var id = setInterval(function () {
+ 
+        spanedSec++;
+ 
+        // 経過時間 >= 待機時間の場合、待機終了。
+        if (spanedSec >= waitSec) {
+ 
+            // タイマー停止
+            clearInterval(id);
+ 
+            // 完了時、コールバック関数を実行
+            if (callbackFunc) callbackFunc();
+        }
+    }, 1000);
+ 
+}

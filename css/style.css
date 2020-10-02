@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 
-
-
 body	{
   font-family: 'Noto Sans JP', sans-serif;
   /*background-color: #7b233a;*/
@@ -12,10 +10,10 @@ body	{
   background-position: center center;
   background-size: cover;
   font-size: large;
+  box-sizing : border-box;
 }
-/*　ナビゲーションバー　navbar-static */
-.menu{
-    margin: 0;
+#TopMessage{
+  max-width: 100%;
 }
 .message div#list {
   background-color: rgba(249, 230, 205);
@@ -37,18 +35,6 @@ body	{
 img.umbrella-img {
   width: 30px;
 }
-/* footer */
-.footer {
-  padding: 15px 0 25px 0;
-  background-color: rgb(27, 27, 26);
-  color: #fff;
-}
-
-.footer p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.6;
-}
 
 /* essential */
 .essential {
@@ -63,12 +49,8 @@ img.umbrella-img {
 }
 
 @media screen and (min-width: 768px) {
-  .formarea {
-    padding: 15px 0 0 0;
-    text-align: center;
-  }
-  .regist_button {
-    margin-left: 125px;
+  #TopMessage{
+    max-width: 60%;
   }
 }
 
@@ -79,30 +61,6 @@ img.umbrella-img {
   background-color: rgb(27, 27, 26);
   color: #fff;
 }
-
-/* PAGE TOP 
-#page-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 80%;
-}
-
-#page-top a {
-  background: #666;
-  text-decoration: none;
-  color: #fff;
-  width: 100px;
-  padding: 25px 0;
-  text-align: center;
-  display: block;
-  border-radius: 10px;
-}
-
-#page-top a:hover {
-  text-decoration: none;
-  background: #999;
-}*/
 
 .fadein {
   opacity: 0;
@@ -124,30 +82,7 @@ img.umbrella-img {
   opacity: 1;
   transform: translate(0, 0);
 }
-#scroll-arrow-hint {
-  position: absolute;
-  bottom: 25vh;
-  opacity: 0;
-}
 
-#scroll-arrow-hint span {
-  display: block;
-  width: 24px;
-  height: 24px;
-  border-bottom: 5px solid #06A8FF;
-  border-right: 5px solid #06A8FF;
-  transform: rotate(45deg);
-  margin: -10px;
-  animation: animate 2s infinite;
-}
-
-#scroll-arrow-hint span:nth-child(2) {
-  animation-delay: -0.2s;
-}
-
-#scroll-arrow-hint span:nth-child(3) {
-  animation-delay: -0.4s;
-}
 .message div#nameblock {
   display: inline-block;
 }
@@ -171,4 +106,87 @@ img.umbrella-img {
   top: 0px;
   left: 0px;
   z-index: 5;              /* #loaderより少ない値を入れて下さい */
+}
+#container{
+  width: 99%;
+}
+.cp_arrows *, .cp_arrows *:before, .cp_arrows *:after {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cp_arrows {
+	position: relative;
+	display: flex;
+	height: 300px;/*画面いっぱいにする場合100vh*/
+	margin: 2em auto;
+	justify-content: center;
+	align-items: center;
+}
+.cp_arrows .cp_arrow {
+	position: absolute;
+	top: 50%;/*着地点（サンプルは[class:cp_arrows]height300pxの50%）*/
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	-webkit-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	opacity: 0;
+}
+.cp_arrows .cp_arrowfirst {
+	-webkit-animation: arrow-move08 3s ease-in-out infinite;
+	        animation: arrow-move08 3s ease-in-out infinite;
+}
+.cp_arrows .cp_arrowsecond {
+	-webkit-animation: arrow-move08 3s 1s ease-in-out infinite;
+	        animation: arrow-move08 3s 1s ease-in-out infinite;
+}
+.cp_arrows .cp_arrowthird {
+	-webkit-animation: arrow-move08 3s 2s ease-in-out infinite;
+	        animation: arrow-move08 3s 2s ease-in-out infinite;
+}
+.cp_arrows .cp_arrow:before, .cp_arrows .cp_arrow:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 30px;
+	height: 3px;
+	content: '';
+	background: #E91E63;
+}
+.cp_arrows .cp_arrow:before {
+	-webkit-transform: rotate(30deg) translateX(-39%);
+	        transform: rotate(30deg) translateX(-39%);
+	-webkit-transform-origin: top left;
+	        transform-origin: top left;
+}
+.cp_arrows .cp_arrow:after {
+	-webkit-transform: rotate(-30deg) translateX(39%);
+	        transform: rotate(-30deg) translateX(39%);
+	-webkit-transform-origin: top right;
+	        transform-origin: top right;
+}
+@-webkit-keyframes arrow-move08 {
+	0% {
+		top: 40%;/*スタート地点（サンプルは[class:cp_arrows]height300pxの35%）*/
+		opacity: 0;
+	}
+	70% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes arrow-move08 {
+	0% {
+		top: 40%;
+		opacity: 0;
+	}
+	70% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
